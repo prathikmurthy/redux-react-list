@@ -1,24 +1,28 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect } from 'react';
+import InputField from './components/InputField';
+import TaskGrid from './components/TaskGrid';
+import TitleBar from './components/TitleBar';
+import { useAppDispatch, useAppSelector } from './functions/hooks';
+import { toggleState } from './slicetemplate';
 
 function App() {
+  // const data = useAppSelector((state) => state.item.data);
+  // const dispatch = useAppDispatch()
+
+  // dispatch(toggleState())
+  // dispatch(toggleState()) 
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="bg-slate-900 min-w-screen min-h-screen">
+      <TitleBar />
+      <InputField />
+      <TaskGrid />
+      {/* <input type="text" id="input"></input>
+      <button onClick={() => dispatch(toggleState((document.getElementById("input") as HTMLInputElement).value))}>
+        Toggle
+      </button>
+      <span>{data.map((x) => <div>{x}</div>)}</span> */}
+
     </div>
   );
 }
